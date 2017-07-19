@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 /**
  * Created by prabodhaharankahadeniya on 7/19/17.
  */
@@ -73,10 +75,22 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
 
-    public Cursor getAllUser(){
+    public User[] getAllUser(){
         SQLiteDatabase db=getReadableDatabase();
         Cursor cursor=db.rawQuery("SELECT * FROM user",null);
+
+        ArrayList<User> list=new ArrayList<>();
+
+        while (cursor.moveToNext()){
+            User user=new User();
+            user.setName(cursor.getString(1));
+            user.setAge(cursor.getString(2));
+            user.setCity(cursor.getString(3));
+            list.add(user);
+
+        }
+        cursor.close();
         db.close();
-        return cursor;
+        return list.toArray(new User[list.size()]);
     }
 }

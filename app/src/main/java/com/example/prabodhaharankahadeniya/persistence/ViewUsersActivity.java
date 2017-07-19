@@ -18,9 +18,12 @@ public class ViewUsersActivity extends RoboActivity {
         return dbHandler;
     }
 
+    User[] users;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        users=getDBHandler().getAllUser();
 
     }
 }
