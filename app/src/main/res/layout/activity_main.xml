@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.prabodhaharankahadeniya.persistence.MainActivity">
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/btn_settings"
+        android:layout_centerHorizontal="true"
+        android:text="Settings"
+        android:onClick="onClick"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/btn_file_save"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btn_settings"
+        android:text="File save"
+        android:onClick="onClick"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/btn_create_user"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btn_file_save"
+        android:text="Create User"
+        android:onClick="onClick"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/btn_view_user"
+        android:layout_below="@+id/btn_create_user"
+        android:layout_centerHorizontal="true"
+        android:text="View user"
+        android:onClick="onClick"/>
+
+</RelativeLayout>
