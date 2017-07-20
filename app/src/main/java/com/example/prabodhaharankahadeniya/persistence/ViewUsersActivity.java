@@ -1,6 +1,7 @@
 package com.example.prabodhaharankahadeniya.persistence;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -34,7 +35,7 @@ public class ViewUsersActivity extends RoboActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         users=getDBHandler().getAllUser();
-        Log.d(TAG," "+users.length);
+
         listView.setAdapter(new BaseAdapter() {
             @Override
             public int getCount() {
@@ -53,7 +54,7 @@ public class ViewUsersActivity extends RoboActivity {
 
             @Override
             public View getView(int i, View convertView, ViewGroup viewGroup) {
-                User user=users[i];
+                final User user=users[i];
                 View cellUser=null;
                 if(convertView==null){
                     cellUser= LayoutInflater.from(ViewUsersActivity.this).inflate(R.layout.user_list_item,null);
@@ -92,6 +93,18 @@ public class ViewUsersActivity extends RoboActivity {
                 nameTV.setText(user.getName());
                 ageTV.setText(user.getAge());
                 cityTV.setText(user.getCity());
+                cellUser.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent=new Intent(ViewUsersActivity.this, UpdateUserActivity.class);
+                        intent.putExtra("id",user.getId());
+                        intent.putExtra("name",user.getName());
+                        intent.putExtra("age",user.getAge());
+                        intent.putExtra("city",user.getCity());
+
+                        startActivity(intent);
+                    }
+                });
 
 
                 return cellUser;

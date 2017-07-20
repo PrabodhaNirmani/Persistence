@@ -6,6 +6,7 @@ package com.example.prabodhaharankahadeniya.persistence;
 
 public class User {
 
+    private String id;
     private String name;
     private String city;
     private String age;
@@ -22,6 +23,10 @@ public class User {
 
     }
 
+    public String getId() {
+        return id;
+    }
+
     public String getAge() {
         return age;
     }
@@ -32,6 +37,10 @@ public class User {
 
     public String getCity() {
         return city;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void setAge(String age) {

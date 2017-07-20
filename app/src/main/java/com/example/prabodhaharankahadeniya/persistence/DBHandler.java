@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 
 public class DBHandler extends SQLiteOpenHelper {
 
-
+    private static final String TAG="DBHandler";
     private static final String DATABASE_NAME = "users.db";
     private static final String TABLE_NAME = "user";
     private static final int DATABASE_VERSION=1;
@@ -28,7 +29,8 @@ public class DBHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String query="CREATE TABLE user(id INTEGER AUTO INCREMENT, name TEXT, age TEXT, city TEXT)";
+
+        String query="CREATE TABLE user(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age TEXT, city TEXT)";
 
         sqLiteDatabase.execSQL(query);
 
@@ -83,6 +85,11 @@ public class DBHandler extends SQLiteOpenHelper {
 
         while (cursor.moveToNext()){
             User user=new User();
+            user.setId(cursor.getString(0));
+            Log.d(TAG,""+cursor.getInt(0));
+
+//            Log.d(TAG,""+user.getId());
+
             user.setName(cursor.getString(1));
             user.setAge(cursor.getString(2));
             user.setCity(cursor.getString(3));

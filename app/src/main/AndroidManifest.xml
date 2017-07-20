@@ -19,6 +19,8 @@
         <activity android:name=".CreateUserActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".ViewUsersActivity" />
+        <activity android:name=".UpdateUserActivity" />
+
         <activity android:name=".FileSaveActivity"></activity>
     </application>
 
