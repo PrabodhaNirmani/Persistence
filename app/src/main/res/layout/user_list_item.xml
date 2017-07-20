@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:text="Name"
         android:layout_margin="5dp"
-        android:textSize="20dp"
+        android:textSize="25dp"
         android:id="@+id/name"/>
 
     <TextView
@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:text="Age"
         android:layout_margin="5dp"
-        android:textSize="15dp"
+        android:textSize="20dp"
         android:id="@+id/age"/>
 
     <TextView
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:text="City"
         android:layout_margin="5dp"
-        android:textSize="14dp"
+        android:textSize="20dp"
         android:id="@+id/city"/>
 
 
